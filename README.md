@@ -3,10 +3,8 @@ Simple API build with Express and TypeORM
 
 
 ## TO DO:
-* mocha tests
 * api
 * CRUD abstraction
-* nyc coverage
 * logger
 * husky precommit
 * audit log
@@ -18,3 +16,5 @@ Simple API build with Express and TypeORM
 * prod run
 * dev mode
 * .env config
+* mocha tests
+* nyc coverage
