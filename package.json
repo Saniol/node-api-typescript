@@ -4,12 +4,13 @@
   "description": "Simple API build with Express and TypeORM",
   "main": "src/index.js",
   "scripts": {
-    "server": "./node_modules/.bin/nodemon ./src/index.js",
-    "start": "tsc && node src/index.js",
+    "start": "npm run build && npm run serve",
+    "build": "tsc",
+    "serve": "node -r dotenv/config dist/index.js",
+    "watch": "npx nodemon -r dotenv/config ./src/index.ts",
     "test": "nyc mocha",
-    "build": "echo \"Error: building for production is not ready yet\" && exit 1",
     "lint": "npx eslint --fix ./**/*",
-    "typeorm": "npx ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "typeorm": "node ./node_modules/typeorm/cli.js",
     "db:init": "npm run typeorm schema:sync && npm run typeorm migration:run"
   },
   "repository": {
@@ -19,7 +20,8 @@
   "keywords": [
     "nodejs",
     "typescript",
-    "orm"
+    "orm",
+    "restapi"
   ],
   "author": "Michał Sadowski",
   "license": "MIT",

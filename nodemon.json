@@ -1,0 +1,17 @@
+{
+  "verbose": true,
+  "execMap": {
+    "js": "node --inspect",
+    "ts": "node --inspect -r ts-node/register"
+  },
+  "watch": [
+    "src/",
+    ".env",
+    "ormconfig.js",
+    "tsconfig.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,ts"
+}

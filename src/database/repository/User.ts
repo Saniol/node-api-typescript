@@ -2,7 +2,7 @@ import { EntityRepository, Repository } from 'typeorm';
 import { BrowseParams } from '../../types/QueryParams';
 import User from '../entity/User';
 
-@EntityRepository()
+@EntityRepository(User)
 export default class UserRepository extends Repository<User> {
   browse({
     page = 1,
