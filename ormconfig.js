@@ -1,6 +1,13 @@
 const baseDir = process.env.NODE_ENV === 'development' ? 'src/' : 'dist/';
 
-const { DB_HOST, DB_PORT, DB_USER, DB_USER_PWD, DB_NAME } = process.env;
+const {
+  DB_HOST,
+  DB_PORT,
+  DB_USER,
+  DB_USER_PWD,
+  DB_NAME,
+  SYNC_DB,
+} = process.env;
 
 module.exports = {
   type: 'postgres',
@@ -9,7 +16,7 @@ module.exports = {
   username: DB_USER,
   password: DB_USER_PWD,
   database: DB_NAME,
-  synchronize: false,
+  synchronize: SYNC_DB === 'true',
   entities: [
     `${baseDir}database/entity/*.js`,
     `${baseDir}database/entity/*.ts`,
